@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Odin Project - Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <script>
+        function computerPlay() {
+            let fist = Math.floor(Math.random() * 3);
+            if (fist === 0) {
+                return 'Rock';
+            } else if (fist === 1) {
+                return 'Paper';
+            } else {
+                return 'Scissors';
+            }
+        }
+    </script>
+</body>
+</html>
