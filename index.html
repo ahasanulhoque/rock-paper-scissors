@@ -6,7 +6,10 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
+    <p>This is a simple game of Rock, Paper, Scissors, played in the console against the computer.</p>
     <script>
+        /*The function below uses a random number generator to
+        randomly choose rock, paper, or scissors for the computer*/
         function computerPlay() {
             let hand = Math.floor(Math.random() * 3);
             if (hand === 0) {
@@ -18,6 +21,8 @@
             }
         }
 
+        /*The function below simulates a round of rock paper scissors. Its inputs
+        are the choices of rock, paper, or scissors made by the player and computer*/
         function playRound(playerSelection, computerSelection) {
             let playerHand = playerSelection = playerSelection.toLowerCase();
             let computerHand = computerSelection.toLowerCase();
@@ -43,16 +48,29 @@
             }
         }
 
+        //The function below plays out a 5 round game of rock, paper, scissors
         function game(){
-            let playerSelection = '';
-            let result = '';
+            let playerSelection = '';           //The variables to the left are
+            let result = '';                    //initialized for use in the game
             let playerScore = 0;
             let computerScore = 0;
+            let promptTest = false;             //prompTest is a boolean to test whether
+                                                //the user entered rock, paper, or scissors
 
             for (i=0; i<5; i++){
-                playerSelection = prompt('Choose rock, paper, or scissors');
+                //Do while below makes sure the user enters a valid choice when prompted
+                do {
+                    promptTest = false;
+                    playerSelection = prompt('Choose rock, paper, or scissors');
+                    if(playerSelection.toLowerCase() != 'rock' && playerSelection.toLowerCase() != 'paper' && playerSelection.toLowerCase() != 'scissors'){
+                        alert('Please enter rock, paper, or scissors');
+                        promptTest = true;
+                    }
+                } while(promptTest)
+
                 result = playRound(playerSelection,computerPlay());
-                console.log(result);
+                console.log(result);            //Display who won the round
+                //Increment the score for the player who won the round, or do nothing if a draw.
                 if (result.charAt(4) == 'w') {
                     playerScore++;
                 } else if (result.charAt(4) == 'l') {
@@ -60,6 +78,7 @@
                 }
             }
             
+            //Return the final result
             if(playerScore>computerScore) {
                 return 'You won the best of 5!';
             } else if(playerScore<computerScore){

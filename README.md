@@ -1,0 +1,1 @@
+This is a simple game of Rock Paper Scissors, currently played in the console and used as an introduction to functions in Javascript
