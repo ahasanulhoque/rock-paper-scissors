@@ -8,15 +8,42 @@
     <h1>Rock Paper Scissors</h1>
     <script>
         function computerPlay() {
-            let fist = Math.floor(Math.random() * 3);
-            if (fist === 0) {
+            let hand = Math.floor(Math.random() * 3);
+            if (hand === 0) {
                 return 'Rock';
-            } else if (fist === 1) {
+            } else if (hand === 1) {
                 return 'Paper';
             } else {
                 return 'Scissors';
             }
         }
+
+        function playRound(playerSelection, computerSelection) {
+            let playerHand = playerSelection = playerSelection.toLowerCase();
+            let computerHand = computerSelection.toLowerCase();
+            
+            if (playerHand == 'rock' && computerHand == 'paper'){
+                return 'You lose! Paper beats rock.';
+            } else if (playerHand == 'rock' && computerHand == 'scissors'){
+                return 'You win! Rock beats scissors.';
+            } else if (playerHand == 'rock' && computerHand == 'rock'){
+                return 'Draw! You both chose rock.';
+            } else if (playerHand == 'paper' && computerHand == 'rock'){
+                return 'You win! Paper beats rock.';
+            } else if (playerHand == 'paper' && computerHand == 'scissors'){
+                return 'You lose! Scissors beats paper';
+            } else if (playerHand == 'paper' && computerHand == 'paper'){
+                return 'Draw! You both chose paper.';
+            } else if (playerHand == 'scissors' && computerHand == 'rock'){
+                return 'You lose! Rock beats scissors';
+            } else if (playerHand == 'scissors' && computerHand == 'paper'){
+                return 'You win! Scissors beats paper';
+            } else {
+                return 'Draw! You both chose scissors.';
+            }
+        }
+
+        
     </script>
 </body>
 </html>
