@@ -6,87 +6,8 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-
-    <div id="results">
-        <h2>Game results</h2>
-        <p id="player-score">Your score: 0</p>
-        <p id="computer-score">Computer score: 0</p>
-    </div>
-
+    <p>This is a simple game of Rock, Paper, Scissors, played in the console against the computer.</p>
     <script>
-        let roundCount = 0;
-        let playerScore = 0;
-        let computerScore = 0;
-
-        const results = document.querySelector("#results");
-        const player = document.querySelector("#player-score");
-        const computer = document.querySelector('#computer-score');
-
-        const roundResult = document.createElement('p');
-        roundResult.setAttribute('id', 'round-result');
-
-        const gameResult = document.createElement('p');
-        gameResult.setAttribute('id', 'game-result');
-
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-                let round = playRound(button.id, computerPlay());
-                updateRound(round);
-            });
-        });
-
-        function updateRound(round) {
-            roundResult.textContent = round;
-            results.appendChild(roundResult);
-            updateGame(round);
-        }
-
-        function updateGame(round) {
-            let gameEnd = '';
-            let playerString = player.textContent;
-            let computerString = computer.textContent;
-            if (round.charAt(4) == 'w') {
-                playerScore++;
-                player.textContent = 
-                    playerString.replace(playerString.charAt(playerString.length-1), playerScore);
-                results.insertBefore(player, computer);
-            } else if (round.charAt(4) == 'l') {
-                computerScore++;
-                computer.textContent[-1] = computerScore;
-                computer.textContent = 
-                    computerString.replace(computerString.charAt(computerString.length-1), computerScore);
-                results.insertBefore(computer, roundResult);
-            }
-
-            roundCount++;
-
-            if(roundCount == 5){
-                if(playerScore>computerScore) {
-                    gameEnd = 'You won the best of 5!';
-                    finishGame(gameEnd);
-                } else if(playerScore<computerScore){
-                    gameEnd = 'You lost the best of 5!';
-                    finishGame(gameEnd);
-                } else {
-                    gameEnd = 'The best of 5 ended in a draw!'
-                    finishGame(gameEnd);
-                }  
-            }
-        }
-
-        function finishGame(winner){
-            gameResult.textContent = winner;
-            results.appendChild(gameResult);
-
-            roundCount = 0;
-            playerScore = 0;
-            computerScore = 0;
-        }
-
         /*The function below uses a random number generator to
         randomly choose rock, paper, or scissors for the computer*/
         function computerPlay() {
@@ -128,7 +49,7 @@
         }
 
         //The function below plays out a 5 round game of rock, paper, scissors
-        /*function game(){
+        function game(){
             let playerSelection = '';           //The variables to the left are
             let result = '';                    //initialized for use in the game
             let playerScore = 0;
@@ -165,7 +86,7 @@
             } else {
                 return 'The best of 5 ended in a draw!'
             }
-        }*/
+        }
     </script>
 </body>
 </html>
