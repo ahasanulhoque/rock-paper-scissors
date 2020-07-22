@@ -1,1 +1,3 @@
-This is a simple game of Rock Paper Scissors, currently played in the console and used as an introduction to functions in Javascript
+This is a simple game of Rock Paper Scissors. It has a basic display and basic responsive design.
+
+This project uses just basic HTML, CSS, and Javascript. It was used as practice for using Javascript to make a page dynamic.
