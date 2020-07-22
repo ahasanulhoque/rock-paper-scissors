@@ -16,19 +16,18 @@ body {
 
 #game {
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #summary {
-    margin: 200px;
     text-align: center;
 }
 
 #buttons {
     display: flex;
-    position: relative;
-    top: -250px;
 }
 
 .choice-button {
@@ -40,7 +39,7 @@ body {
     bottom: 200px;
 }
 
-@media (max-width: 700px) {
+@media (orientation: portrait) {
     body {
         display: flex;
         flex-direction: column;
@@ -59,12 +58,12 @@ body {
 
     #buttons {
         position: relative;
-        top: -60px
+        top: -90px
     }
 
     #again {
         position: fixed;
-        bottom: 330px;
+        bottom: 290px;;
     }
 
     #results {
@@ -74,11 +73,5 @@ body {
         border-right: none;
         border-top: solid;
         text-align: center;
-    }
-}
-
-@media (min-width: 701px) and (max-width: 930px) {
-    #summary {
-        width: 120%;
     }
 }
