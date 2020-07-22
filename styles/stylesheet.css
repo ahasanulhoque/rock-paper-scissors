@@ -4,32 +4,28 @@ html {
 
 body {
     display: flex;
+    margin: 0;
 }
 
-#results {
-    order: 1;
-    border: solid;
+#results {        
     width: 30%;
-    height: 97vh;
+    height: 100vh;
     text-indent: 10px;
+    border-right: solid;
 }
 
 #game {
-    order: 2;
     width: 100%;
     display: grid;
     place-items: center;
-    border: solid;
 }
 
 #summary {
-    border: solid;
     margin: 200px;
     text-align: center;
 }
 
 #buttons {
-    border: solid;
     display: flex;
     position: relative;
     bottom: 200px;
@@ -42,4 +38,39 @@ body {
 #again {
     position: relative;
     bottom: 200px;
+}
+
+@media (max-width: 700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    #game {
+        order: 1;
+        height: 90%;
+    }
+
+    #summary {
+        margin: auto;
+        position: relative;
+        top: 100px;
+    }
+
+    #buttons {
+        position: static;
+    }
+
+    #again {
+        position: static;
+    }
+
+    #results {
+        order: 2;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-top: solid;
+        text-align: center;
+    }
 }
