@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>The Odin Project - Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles/stylesheet.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <button id="rock" class='choice-button'>Rock</button>
-    <button id="paper" class='choice-button'>Paper</button>
-    <button id="scissors" class='choice-button'>Scissors</button>
+    <div id="game">
+        <div id="summary">
+            <h1>Rock Paper Scissors</h1>
+            <p id="directions">Play against the computer. The first to 5 wins!</p>
+        </div>
+        <div id="buttons">
+            <button id="rock" class='choice-button'>Rock</button>
+            <button id="paper" class='choice-button'>Paper</button>
+            <button id="scissors" class='choice-button'>Scissors</button>
+        </div>
+    </div>
 
     <div id="results">
         <h2>Game results</h2>
@@ -16,48 +24,6 @@
         <p id="computer-score">Computer score: 0</p>
     </div>
 
-    <script src="scripts/script.js">
-        
-
-        //The function below plays out a 5 round game of rock, paper, scissors
-        /*function game(){
-            let playerSelection = '';           //The variables to the left are
-            let result = '';                    //initialized for use in the game
-            let playerScore = 0;
-            let computerScore = 0;
-            let promptTest = false;             //prompTest is a boolean to test whether
-                                                //the user entered rock, paper, or scissors
-
-            for (i=0; i<5; i++){
-                //Do while below makes sure the user enters a valid choice when prompted
-                do {
-                    promptTest = false;
-                    playerSelection = prompt('Choose rock, paper, or scissors');
-                    if(playerSelection.toLowerCase() != 'rock' && playerSelection.toLowerCase() != 'paper' && playerSelection.toLowerCase() != 'scissors'){
-                        alert('Please enter rock, paper, or scissors');
-                        promptTest = true;
-                    }
-                } while(promptTest)
-
-                result = playRound(playerSelection,computerPlay());
-                console.log(result);            //Display who won the round
-                //Increment the score for the player who won the round, or do nothing if a draw.
-                if (result.charAt(4) == 'w') {
-                    playerScore++;
-                } else if (result.charAt(4) == 'l') {
-                    computerScore++;
-                }
-            }
-            
-            //Return the final result
-            if(playerScore>computerScore) {
-                return 'You won the best of 5!';
-            } else if(playerScore<computerScore){
-                return 'You lost the best of 5!';
-            } else {
-                return 'The best of 5 ended in a draw!'
-            }
-        }*/
-    </script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

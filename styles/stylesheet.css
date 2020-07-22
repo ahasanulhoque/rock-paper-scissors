@@ -1,0 +1,45 @@
+html {
+ font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;   
+}
+
+body {
+    display: flex;
+}
+
+#results {
+    order: 1;
+    border: solid;
+    width: 30%;
+    height: 97vh;
+    text-indent: 10px;
+}
+
+#game {
+    order: 2;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border: solid;
+}
+
+#summary {
+    border: solid;
+    margin: 200px;
+    text-align: center;
+}
+
+#buttons {
+    border: solid;
+    display: flex;
+    position: relative;
+    bottom: 200px;
+}
+
+.choice-button {
+    margin: 10px;
+}
+
+#again {
+    position: relative;
+    bottom: 200px;
+}

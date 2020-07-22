@@ -3,6 +3,7 @@ let computerScore = 0;
 
 //Select existing html nodes
 const results = document.querySelector("#results");
+const game = document.querySelector("#game");
 const player = document.querySelector("#player-score");
 const computer = document.querySelector('#computer-score');
 
@@ -66,7 +67,7 @@ function finishGame(){
     });
 
     playAgain.textContent = 'Play again?'
-    results.appendChild(playAgain);
+    game.appendChild(playAgain);
     playAgain.addEventListener('click', reinitializeGame);
 
     //playerScore = 0;
@@ -77,7 +78,7 @@ function reinitializeGame(){
     buttons.forEach((button) => {
         button.disabled = false;
     });
-    
+
     playerScore = 0;
     computerScore = 0;
            
